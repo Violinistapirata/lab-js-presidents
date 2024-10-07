@@ -448,18 +448,13 @@ function  countYearsInOffice(presidentsArr) {
   return totalYearsInOffice;
 }
 
-const testPresidents = [
-  { name: "George Washington", party: null, tookOffice: 1789, leftOffice: 1797 }, // 8 years
-  { name: "John F. Kennedy", party: "Democratic", tookOffice: 1961, leftOffice: 1963 }, // 2 years
-  { name: "Ronald Reagan", party: "Republican", tookOffice: 1981, leftOffice: 1989 }, // 8 years
-  { name: "Joseph Biden", party: "Democratic", tookOffice: 2021, leftOffice: null }, // still in office
-];
 
-console.log(countYearsInOffice(testPresidents))
 
 
 // Iteration 4 | Sort Presidents by Birth Year - `sort()`
-function sortPresidentsByBirthYear(presidentsArr) {}
+function sortPresidentsByBirthYear(presidentsArr) {
+  return presidentsArr.sort((a, b) => a.birthYear - b.birthYear);
+}
 
 
 
