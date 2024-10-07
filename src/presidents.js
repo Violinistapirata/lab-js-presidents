@@ -435,9 +435,27 @@ function getDemocraticPresidents(presidentsArr) {
 
 
 // Iteration 3 | Count Years in Office - reduce()
-function  countYearsInOffice(presidentsArr) {}
+function  countYearsInOffice(presidentsArr) {
+  const totalYearsInOffice = presidentsArr.reduce((acc, curr) => {
+    if (curr.leftOffice === null) {
+      return acc + 0;
+    }
+    
+    const currYearsInOffice = curr.leftOffice - curr.tookOffice;
+    return acc + currYearsInOffice;
+    
+  }, 0)
+  return totalYearsInOffice;
+}
 
+const testPresidents = [
+  { name: "George Washington", party: null, tookOffice: 1789, leftOffice: 1797 }, // 8 years
+  { name: "John F. Kennedy", party: "Democratic", tookOffice: 1961, leftOffice: 1963 }, // 2 years
+  { name: "Ronald Reagan", party: "Republican", tookOffice: 1981, leftOffice: 1989 }, // 8 years
+  { name: "Joseph Biden", party: "Democratic", tookOffice: 2021, leftOffice: null }, // still in office
+];
 
+console.log(countYearsInOffice(testPresidents))
 
 
 // Iteration 4 | Sort Presidents by Birth Year - `sort()`
